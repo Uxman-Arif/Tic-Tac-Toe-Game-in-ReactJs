@@ -35,9 +35,13 @@ function Gameui() {
         };
         return false;
     };
+
+    const Initila = ()=>{
+        setstate(Array(9).fill(null));
+    }
     return (
         <div className='container'>
-            {winnerlogic()?<h1>{winnerlogic()} won</h1>:(<>
+            {winnerlogic()?<h1>{winnerlogic()} won <button onClick={Initila}>Play again</button></h1>:(<>
                 <div className='tictac-row'>
                     <Square onClick={()=>handleClick(0)} value={state[0]}/>
                     <Square onClick={()=>handleClick(1)} value={state[1]}/>
